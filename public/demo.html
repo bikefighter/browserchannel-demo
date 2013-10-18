@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Demo Code</title>
+  <script src="/js/browserchannel.min.js"></script>
+  <script type="text/javascript">
+    var channel;
+    var handler = bc.newHandler();
+    var message = "I'm working!";
+    handler.channelOpened = function(channel) {
+        channel.sendMap({message:message});
+      };
+      handler.channelHandleArray = function(x, data) {
+        alert(data[0].message);
+      };
+
+      channel = new goog.net.BrowserChannel();
+      channel.setHandler(handler);
+      channel.connect('test', 'channel');
+    </script>
+</head>
+<body>
+
+um, hi
+</body>
+</html>
