@@ -2,7 +2,7 @@ Simple Browser Channel Demo
 ===========================
 
 * `bundle install`
-* Run with `thin start`
+* Run with `bundle exec thin start`
 * Navigate to `http://localhost:3000/demo`
 * Page should alert.
 
