@@ -3,6 +3,7 @@ Dir.chdir File.dirname(__FILE__)
 require 'rubygems'
 require 'browser_channel'
 require 'browser_test_channel'
+require File.expand_path("../demo_handler.rb", __FILE__)
 
 unless String.respond_to? :bytesize
   # This only patches in on Ruby 1.8.6
@@ -16,7 +17,7 @@ stack = proc {
   use Rack::CommonLogger
   use Rack::Reloader, 1
   map '/channel' do
-    run BrowserChannel::Server.new
+    run BrowserChannel::Server.new({handler: DemoHandler})
   end
   map '/test' do
     run BrowserTestChannel::Server.new

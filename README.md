@@ -7,6 +7,13 @@ Simple Browser Channel Demo
 * Page should alert.
 
 
+Server Side Event Handler
+-------------------------
+Example given in demo_handler.rb.
+Use when initializing BrowserChannel::Server
+    `BrowserChannel::Server.new({handler: DemoHandler})`
+
+
 Recompile the Browser Channel JS
 --------------------------------
 
